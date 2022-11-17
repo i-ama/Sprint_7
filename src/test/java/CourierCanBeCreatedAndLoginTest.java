@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 import static org.apache.http.HttpStatus.SC_CREATED;
 
 public class CourierCanBeCreatedAndLoginTest {
@@ -39,6 +40,6 @@ public class CourierCanBeCreatedAndLoginTest {
         int actualStatusCode = responseCreateCourier.extract().statusCode();
         boolean isCourierCreated = responseCreateCourier.extract().path("ok");
         assertEquals("Incorrect status code", SC_CREATED, actualStatusCode);
-        assertEquals("Incorrect ok message",true, isCourierCreated);
+        assertTrue("Incorrect ok message", isCourierCreated);
     }
 }
